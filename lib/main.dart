@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_chat/views/sign_in.dart';
 import 'package:flutter_chat/views/sign_up.dart';
 
 void main() {

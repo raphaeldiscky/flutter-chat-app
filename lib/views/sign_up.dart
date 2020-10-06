@@ -7,6 +7,10 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  TextEditingController userNameTextEditingController = new TextEditingController();
+  TextEditingController emailTextEditingController = new TextEditingController();
+  TextEditingController passwordTextEditingController = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,20 +25,21 @@ class _SignUpState extends State<SignUp> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 TextField(
+                  controller: userNameTextEditingController,
                   style: simpleTextStyle(),
                   decoration: textFieldInputDecoration('Username'),
                 ),
                 TextField(
+                  controller: emailTextEditingController,
                   style: simpleTextStyle(),
                   decoration: textFieldInputDecoration('Email'),
                 ),
                 TextField(
+                  controller: passwordTextEditingController,
                   style: simpleTextStyle(),
                   decoration: textFieldInputDecoration('Password'),
                 ),
-                SizedBox(
-                  height: 8,
-                ),
+                SizedBox(height: 8),
                 Container(
                   alignment: Alignment.centerRight,
                   child: Container(
@@ -45,27 +50,22 @@ class _SignUpState extends State<SignUp> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 8,
-                ),
+                SizedBox(height: 8),
                 Container(
                   alignment: Alignment.center,
                   width: MediaQuery.of(context).size.width,
                   padding: EdgeInsets.symmetric(vertical: 20),
                   decoration: BoxDecoration(
-                      gradient: LinearGradient(colors: [
-                        const Color(0xff007ef4),
-                        const Color(0xff2a75bc)
-                      ]),
+                      gradient: LinearGradient(
+                        colors: [const Color(0xff007ef4), const Color(0xff2a75bc)],
+                      ),
                       borderRadius: BorderRadius.circular(30)),
                   child: Text(
                     'Sign Up',
                     style: mediumTextStyle(),
                   ),
                 ),
-                SizedBox(
-                  height: 16,
-                ),
+                SizedBox(height: 16),
                 Container(
                   alignment: Alignment.center,
                   width: MediaQuery.of(context).size.width,
@@ -79,9 +79,7 @@ class _SignUpState extends State<SignUp> {
                     style: TextStyle(color: Colors.black87, fontSize: 17),
                   ),
                 ),
-                SizedBox(
-                  height: 16,
-                ),
+                SizedBox(height: 16),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -92,15 +90,14 @@ class _SignUpState extends State<SignUp> {
                     Text(
                       "SignIn now",
                       style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 17,
-                          decoration: TextDecoration.underline),
+                        color: Colors.white,
+                        fontSize: 17,
+                        decoration: TextDecoration.underline,
+                      ),
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 50,
-                )
+                SizedBox(height: 50)
               ],
             ),
           ),
