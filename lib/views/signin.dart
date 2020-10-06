@@ -82,6 +82,10 @@ class _SignInState extends State<SignIn> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    Text(
+                      "Don't have an account? ",
+                      style: mediumTextStyle(),
+                    ),
                     GestureDetector(
                       onTap: () {
                         widget.toggle();
@@ -89,15 +93,13 @@ class _SignInState extends State<SignIn> {
                       child: Container(
                         padding: EdgeInsets.symmetric(vertical: 8),
                         child: Text(
-                          "Don't have an account? ",
-                          style: mediumTextStyle(),
+                          "Register now",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 17,
+                              decoration: TextDecoration.underline),
                         ),
                       ),
-                    ),
-                    Text(
-                      "Register now",
-                      style: TextStyle(
-                          color: Colors.white, fontSize: 17, decoration: TextDecoration.underline),
                     ),
                   ],
                 ),
