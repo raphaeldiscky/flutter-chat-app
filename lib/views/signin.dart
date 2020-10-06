@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_chat/widgets/widget.dart';
 
 class SignIn extends StatefulWidget {
+  final Function toggle;
+  SignIn(this.toggle);
+
   @override
   _SignInState createState() => _SignInState();
 }
@@ -49,10 +52,8 @@ class _SignInState extends State<SignIn> {
                   width: MediaQuery.of(context).size.width,
                   padding: EdgeInsets.symmetric(vertical: 20),
                   decoration: BoxDecoration(
-                      gradient: LinearGradient(colors: [
-                        const Color(0xff007ef4),
-                        const Color(0xff2a75bc)
-                      ]),
+                      gradient: LinearGradient(
+                          colors: [const Color(0xff007ef4), const Color(0xff2a75bc)]),
                       borderRadius: BorderRadius.circular(30)),
                   child: Text(
                     'Sign In',
@@ -81,16 +82,22 @@ class _SignInState extends State<SignIn> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      "Don't have an account? ",
-                      style: mediumTextStyle(),
+                    GestureDetector(
+                      onTap: () {
+                        widget.toggle();
+                      },
+                      child: Container(
+                        padding: EdgeInsets.symmetric(vertical: 8),
+                        child: Text(
+                          "Don't have an account? ",
+                          style: mediumTextStyle(),
+                        ),
+                      ),
                     ),
                     Text(
                       "Register now",
                       style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 17,
-                          decoration: TextDecoration.underline),
+                          color: Colors.white, fontSize: 17, decoration: TextDecoration.underline),
                     ),
                   ],
                 ),
