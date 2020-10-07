@@ -1,9 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 class DatabaseMethods {
-  getUserByUsername(String username) {
-    FirebaseFirestore.instance.collection("users").where("name", isEqualTo: username).get();
+  getUserByUsername(String username) async {
+    return await FirebaseFirestore.instance
+        .collection("users")
+        .where("name", isEqualTo: username)
+        .get();
   }
 
   uploadUserInfo(userMap) {
