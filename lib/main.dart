@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chat/helper/authenticate.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_chat/helper/helper.dart';
+import 'package:flutter_chat/views/chatrooms.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -8,8 +10,29 @@ void main() async {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   // This widget is the root of your application.
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+bool isUserLoggedIn = false;
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    getLoggedInState();
+    super.initState();
+  }
+
+  getLoggedInState() async {
+    await HelperFunctions.getUserLoggedInSharedPreference().then((val) {
+      setState(() {
+        isUserLoggedIn = val;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,7 +44,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Authenticate(),
+      home: isUserLoggedIn ? ChatRoom() : Authenticate(),
     );
   }
 }
