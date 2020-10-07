@@ -20,7 +20,7 @@ class _ChatRoomState extends State<ChatRoom> {
   }
 
   getUserInfo() async {
-    Constants.myName = await HelperFunctions.getUserEmailInSharedPreference();
+    Constants.myName = await HelperFunctions.getUserEmailSharedPreference();
     setState(() {});
   }
 
