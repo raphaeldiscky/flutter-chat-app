@@ -57,8 +57,7 @@ class _SignInState extends State<SignIn> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          height: MediaQuery.of(context).size.height - 50,
-          alignment: Alignment.bottomCenter,
+          height: MediaQuery.of(context).size.height - 20,
           child: Column(
             children: <Widget>[
               HeaderContainer("Login"),
@@ -121,7 +120,7 @@ class _SignInState extends State<SignIn> {
                               widget.toggle();
                             },
                             child: Container(
-                              padding: EdgeInsets.symmetric(vertical: 8),
+                              padding: EdgeInsets.symmetric(vertical: 1),
                               child: Text(
                                 "Sign Up",
                                 style: TextStyle(color: orangeColors),

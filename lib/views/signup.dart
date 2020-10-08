@@ -63,8 +63,7 @@ class _SignUpState extends State<SignUp> {
             )
           : SingleChildScrollView(
               child: Container(
-                height: MediaQuery.of(context).size.height - 50,
-                alignment: Alignment.bottomCenter,
+                height: MediaQuery.of(context).size.height - 20,
                 child: Column(
                   children: <Widget>[
                     HeaderContainer("Register"),
@@ -137,7 +136,7 @@ class _SignUpState extends State<SignUp> {
                                     widget.toggle();
                                   },
                                   child: Container(
-                                    padding: EdgeInsets.symmetric(vertical: 8),
+                                    padding: EdgeInsets.symmetric(vertical: 1),
                                     child: Text(
                                       "Sign In",
                                       style: TextStyle(color: orangeColors),
