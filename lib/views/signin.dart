@@ -38,7 +38,7 @@ class _SignInState extends State<SignIn> {
       });
 
       authMethods
-          .signUpWithEmailAndPassword(
+          .signInWithEmailAndPassword(
               emailTextEditingController.text, passwordTextEditingController.text)
           .then((val) {
         if (val != null) {
