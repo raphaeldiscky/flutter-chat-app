@@ -61,7 +61,7 @@ class _ChatRoomState extends State<ChatRoom> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Image.asset("assets/images/logo.png", height: 44),
+        title: Image.asset("assets/images/logo.png", height: 40),
         backgroundColor: orangeColors,
         actions: [
           GestureDetector(
