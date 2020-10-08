@@ -4,6 +4,7 @@ import 'package:flutter_chat/helper/constants.dart';
 import 'package:flutter_chat/helper/helper.dart';
 import 'package:flutter_chat/services/auth.dart';
 import 'package:flutter_chat/services/database.dart';
+import 'package:flutter_chat/utils/color.dart';
 import 'package:flutter_chat/views/conversation_screen.dart';
 import 'package:flutter_chat/views/search.dart';
 import 'package:flutter_chat/widgets/widget.dart';
@@ -60,7 +61,8 @@ class _ChatRoomState extends State<ChatRoom> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Image.asset("assets/images/logo.png", height: 50),
+        title: Image.asset("assets/images/logo.png", height: 44),
+        backgroundColor: orangeColors,
         actions: [
           GestureDetector(
               onTap: () {
@@ -76,6 +78,7 @@ class _ChatRoomState extends State<ChatRoom> {
       body: chatRoomList(),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.search),
+        backgroundColor: orangeColors,
         onPressed: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) => SearchScreen()));
         },
@@ -100,8 +103,8 @@ class ChatRoomTile extends StatelessWidget {
             ));
       },
       child: Container(
-        color: Colors.black26,
-        padding: EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+        color: Colors.black45,
+        padding: EdgeInsets.symmetric(horizontal: 18, vertical: 24),
         child: Row(
           children: [
             Container(
@@ -109,7 +112,7 @@ class ChatRoomTile extends StatelessWidget {
               width: 40,
               alignment: Alignment.center,
               decoration:
-                  BoxDecoration(color: Colors.blue, borderRadius: BorderRadius.circular(40)),
+                  BoxDecoration(color: orangeLightColors, borderRadius: BorderRadius.circular(40)),
               child: Text(
                 "${userName.substring(0, 1).toUpperCase()}",
                 style: mediumTextStyle(),

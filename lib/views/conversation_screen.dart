@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chat/helper/constants.dart';
 import 'package:flutter_chat/services/database.dart';
+import 'package:flutter_chat/utils/color.dart';
 import 'package:flutter_chat/widgets/widget.dart';
 
 class ConversationScreen extends StatefulWidget {
@@ -131,7 +132,7 @@ class MessageTile extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: isSendByMe
-                ? [const Color(0xff007ef4), const Color(0xff2a75bc)]
+                ? [orangeLightColors, orangeLightColors]
                 : [const Color(0x1affffff), const Color(0x1affffff)],
           ),
           borderRadius: isSendByMe

@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_chat/utils/color.dart';
 
 Widget appBarMain(BuildContext context) {
   return AppBar(
-    title: Image.asset(
-      "assets/images/logo.png",
-      height: 40,
-    ),
+    backgroundColor: orangeColors,
   );
 }
 

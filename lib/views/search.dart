@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chat/helper/constants.dart';
 import 'package:flutter_chat/services/database.dart';
+import 'package:flutter_chat/utils/color.dart';
 import 'package:flutter_chat/views/conversation_screen.dart';
 import 'package:flutter_chat/widgets/widget.dart';
 
@@ -80,7 +81,7 @@ class _SearchScreenState extends State<SearchScreen> {
             },
             child: Container(
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: orangeLightColors,
                 borderRadius: BorderRadius.circular(30),
               ),
               padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
