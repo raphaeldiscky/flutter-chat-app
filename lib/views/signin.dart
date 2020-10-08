@@ -90,7 +90,7 @@ class _SignInState extends State<SignIn> {
                                 validator: (val) {
                                   return val.length > 6
                                       ? null
-                                      : 'Please enter a password minimal 6+ characters';
+                                      : 'Please enter a password minimum 6 characters';
                                 },
                                 controller: passwordTextEditingController,
                                 hint: "Password",
@@ -99,7 +99,7 @@ class _SignInState extends State<SignIn> {
                         ),
                       ),
                       SizedBox(
-                        height: 68,
+                        height: 108,
                       ),
                       Expanded(
                         child: Center(

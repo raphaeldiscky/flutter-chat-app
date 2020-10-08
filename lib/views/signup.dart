@@ -115,7 +115,7 @@ class _SignUpState extends State<SignUp> {
                               ),
                             ),
                             SizedBox(
-                              height: 10,
+                              height: 50,
                             ),
                             Expanded(
                               child: Center(
